@@ -1,1 +1,1 @@
-# 1.4: Course Information step 4
+# 1.5: Course Information step 5
