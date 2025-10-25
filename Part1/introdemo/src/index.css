@@ -1,3 +1,8 @@
 .example-container {
   min-height: 400px; /* или fixed height, например 500px */
 }
+button{
+  width: 20%;
+  height: 205;
+  
+}
