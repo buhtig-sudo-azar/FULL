@@ -1,2 +1,4 @@
-# Rocket [https://chat.deepseek.com/share/5anohxjrt6j08fk4w2]
-"Исправление AppClickHandle.jsx"
+# расположение кнопок внутри компонента 
+| Left: X |      | Right: Y |
+|:-------:|:----:|:--------:|
+|  plus   | zero |  minus   |
