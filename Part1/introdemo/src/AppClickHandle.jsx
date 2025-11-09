@@ -58,7 +58,7 @@ const AppCounter = () => {
   const handleLeftClick = () => {
     setClicks({ ...clicks, left: clicks.left + 1 });
 
-    setTotal(clicks.left + clicks.right)
+
     setAll(allClicks.concat('L'))
 
   };
