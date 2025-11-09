@@ -1,1 +1,1 @@
-# https://fullstackopen.com/en/part1a_more_complex_state_debugging_react_apps#update-of-the-state-is-asynchronous
+# update-of-the-state-is-asynchronous

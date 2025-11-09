@@ -53,7 +53,7 @@ const Button = (props) => {
 const AppCounter = () => {
   const [clicks, setClicks] = useState({ left: 0, right: 0 });
   const [allClicks, setAll] = useState([])
-  const [total, setTotal] = useState(allClicks.length)
+
 
   const handleLeftClick = () => {
     setClicks({ ...clicks, left: clicks.left + 1 });
@@ -66,7 +66,7 @@ const AppCounter = () => {
   const handleRightClick = () => {
 
     setClicks({ ...clicks, right: clicks.right + 1 });
-    setTotal(clicks.left + clicks.right)
+    
     setAll(allClicks.concat('R'))
   };
 
@@ -74,7 +74,7 @@ const AppCounter = () => {
 
     setClicks({ left: 0, right: 0 });
     setAll([])
-    setTotal(0)
+ 
   };
 
   return (
