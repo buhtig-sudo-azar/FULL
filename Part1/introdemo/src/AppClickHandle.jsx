@@ -2,7 +2,7 @@ import { useState } from "react";
 import './index.css'
 
 const Display = (props) => {
-  const { counter, clicks } = props;
+  const { counter, clicks, total } = props;
 
   return (
     <>
@@ -36,7 +36,9 @@ const Display = (props) => {
           </tr>
         </tbody>
       </table>
-      AllClicks: {clicks.join(' ')}
+      AllClicks: {clicks.length > 0 ? clicks.join(' ') : 0}
+      <p>Total clicks: {clicks.length}</p>
+      <p>Last action: {clicks.length > 0 ? clicks[clicks.length - 1] : 0}</p>
     </>
   );
 };
@@ -51,14 +53,20 @@ const Button = (props) => {
 const AppCounter = () => {
   const [clicks, setClicks] = useState({ left: 0, right: 0 });
   const [allClicks, setAll] = useState([])
+  const [total, setTotal] = useState(allClicks.length)
+
   const handleLeftClick = () => {
     setClicks({ ...clicks, left: clicks.left + 1 });
+
+    setTotal(clicks.left + clicks.right)
     setAll(allClicks.concat('L'))
+
   };
 
   const handleRightClick = () => {
 
     setClicks({ ...clicks, right: clicks.right + 1 });
+    setTotal(clicks.left + clicks.right)
     setAll(allClicks.concat('R'))
   };
 
@@ -66,6 +74,7 @@ const AppCounter = () => {
 
     setClicks({ left: 0, right: 0 });
     setAll([])
+    setTotal(0)
   };
 
   return (
