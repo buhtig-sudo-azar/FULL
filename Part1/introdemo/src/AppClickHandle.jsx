@@ -1,6 +1,24 @@
 import { useState } from "react";
 import './index.css'
 
+
+const History = (props) => {
+  if (props.allClicks.length === 0) {
+    return (
+      <>
+        the app is used by pressing the buttons
+      </>
+    )
+  }
+  return (
+    <>
+      button press history: {props.allClicks.join(' ')}
+    </>
+  )
+}
+
+
+
 const Display = (props) => {
   const { counter, clicks, total } = props;
 
@@ -36,7 +54,7 @@ const Display = (props) => {
           </tr>
         </tbody>
       </table>
-      AllClicks: {clicks.length > 0 ? clicks.join(' ') : 0}
+      <p>AllClicks: <History allClicks={clicks} /></p>
       <p>Total clicks: {clicks.length}</p>
       <p>Last action: {clicks.length > 0 ? clicks[clicks.length - 1] : 0}</p>
     </>
@@ -56,25 +74,31 @@ const AppCounter = () => {
 
 
   const handleLeftClick = () => {
-    setClicks({ ...clicks, left: clicks.left + 1 });
+    setClicks(prevClicks => ({
+      ...prevClicks,
+      left: prevClicks.left + 1
+    }));
 
 
-    setAll(allClicks.concat('L'))
+    setAll(prevAllClicks => prevAllClicks.concat('L'))
 
   };
 
   const handleRightClick = () => {
 
-    setClicks({ ...clicks, right: clicks.right + 1 });
-    
-    setAll(allClicks.concat('R'))
+    setClicks(prevClicks => ({
+      ...prevClicks,
+      right: prevClicks.right + 1
+    }));
+
+    setAll(prevAllClicks => prevAllClicks.concat('R'))
   };
 
   const handleZeroClick = () => {
 
     setClicks({ left: 0, right: 0 });
     setAll([])
- 
+
   };
 
   return (
