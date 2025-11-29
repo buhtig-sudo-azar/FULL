@@ -1,8 +1,11 @@
 .example-container {
   min-height: 400px; /* или fixed height, например 500px */
 }
-button{
+button {
   width: 20%;
   height: 205;
-  
 }
+
+/* nav {
+  display: flex;
+} */

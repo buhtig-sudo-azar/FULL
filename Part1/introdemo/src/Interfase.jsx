@@ -4,6 +4,7 @@ import AppCar from "./AppCar";
 import AppCounter from "./AppClickHandle";
 import ErrorBoundary from "./MyErrorBoundary";
 import BuggyComponent from "./BuggyComponent";
+import TechTracker from "./TechTracker";
 import LogRocket from "logrocket";
 
 const loginUser = (user) => {
@@ -18,10 +19,11 @@ const examplesMap = {
   Example1: AppCar,
   Example2: AppCounter,
   Example3: BuggyComponent,
+  Example4: TechTracker,
 };
 
 const Interfase = () => {
-  const [activeExample, setActiveExample] = React.useState("Example3");
+  const [activeExample, setActiveExample] = React.useState("Example1");
   const ActiveComponent = examplesMap[activeExample];
 
   React.useEffect(() => {
