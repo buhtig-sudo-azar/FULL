@@ -7,3 +7,6 @@
 # npm 7+, extra double-dash is needed:
 
 ### npm create vite@latest introdemo -- --template react
+
+
+### npx create vite@latest unicafe -- --template react

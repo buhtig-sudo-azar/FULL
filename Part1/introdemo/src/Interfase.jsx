@@ -6,6 +6,7 @@ import ErrorBoundary from "./MyErrorBoundary";
 import BuggyComponent from "./BuggyComponent";
 import TechTracker from "./TechTracker";
 import LogRocket from "logrocket";
+import AppToDo from './AppToDo'; 
 
 const loginUser = (user) => {
   LogRocket.identify(user.id, {
@@ -20,6 +21,7 @@ const examplesMap = {
   Example2: AppCounter,
   Example3: BuggyComponent,
   Example4: TechTracker,
+  Example5: AppToDo,
 };
 
 const Interfase = () => {
