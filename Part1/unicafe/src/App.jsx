@@ -1,6 +1,36 @@
 import { useState } from 'react'
 import './App.css'
 
+const Statistics = (props) => {
+     const { good, neutral, bad, average, positivePercentage, all } = props;
+
+     return (
+          <><p style={{
+               margin: '0 0 20px 0',
+               textAlign: 'center',
+               fontWeight: 'bold',
+               fontSize: '18px'
+          }}>
+               <h5>Statistics</h5>
+          </p>
+               <p style={{ margin: '8px 0' }}>good    {good}</p>
+               <p style={{ margin: '8px 0' }}>neutral {neutral}</p>
+               <p style={{ margin: '8px 0' }}>bad     {bad}</p>
+               <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
+                    all     {all}
+               </p>
+               <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
+                    average {average.toFixed(2)}
+               </p>
+               <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
+                    positive {positivePercentage.toFixed(2)} %
+               </p>
+          </>
+
+     )
+}
+
+
 const Button = (props) => {
      const { name, onclick } = props;
      return (
@@ -101,26 +131,10 @@ function App() {
                     minWidth: '250px',
                     fontFamily: 'monospace'
                }}>
-                    <p style={{
-                         margin: '0 0 20px 0',
-                         textAlign: 'center',
-                         fontWeight: 'bold',
-                         fontSize: '18px'
-                    }}>
-                         Statistics
-                    </p>
-                    <p style={{ margin: '8px 0' }}>good    {good}</p>
-                    <p style={{ margin: '8px 0' }}>neutral {neutral}</p>
-                    <p style={{ margin: '8px 0' }}>bad     {bad}</p>
-                    <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
-                         all     {good + neutral + bad}
-                    </p>
-                    <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
-                         average {average.toFixed(2)}
-                    </p>
-                    <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
-                         positive {positivePercentage.toFixed(2)} %
-                    </p>
+                    
+
+
+                    <Statistics good={good} neutral={neutral} bad={bad} all={total} average={average}  positivePercentage={positivePercentage} />
                </div>
           </div>
      )
