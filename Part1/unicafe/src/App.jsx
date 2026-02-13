@@ -3,7 +3,7 @@ import './App.css'
 
 const Statistics = (props) => {
      const { good, neutral, bad, average, positivePercentage, all } = props;
-
+if(all!==0){
      return (
           <><p style={{
                margin: '0 0 20px 0',
@@ -28,6 +28,23 @@ const Statistics = (props) => {
           </>
 
      )
+}
+
+return(
+
+    <><p style={{
+               margin: '0 0 20px 0',
+               textAlign: 'center',
+               fontWeight: 'bold',
+               fontSize: '18px'
+          }}>
+              
+          </p>
+               <h3>
+                    No feedback given
+               </h3>
+          </>
+)
 }
 
 
