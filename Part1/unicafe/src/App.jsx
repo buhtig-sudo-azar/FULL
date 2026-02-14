@@ -1,8 +1,21 @@
 import { useState } from 'react'
 import './App.css'
 
+const StatisticsLine = (props) => {
+
+const {text, value} = props;
+
+return (
+     <>
+      <p style={{ margin: '8px 0' }}>{text}  {value}</p>
+     </>
+)
+
+}
+
 const Statistics = (props) => {
      const { good, neutral, bad, average, positivePercentage, all } = props;
+     <h5>Statistics</h5>
 if(all!==0){
      return (
           <><p style={{
@@ -11,20 +24,15 @@ if(all!==0){
                fontWeight: 'bold',
                fontSize: '18px'
           }}>
-               <h5>Statistics</h5>
+               
           </p>
-               <p style={{ margin: '8px 0' }}>good    {good}</p>
-               <p style={{ margin: '8px 0' }}>neutral {neutral}</p>
-               <p style={{ margin: '8px 0' }}>bad     {bad}</p>
-               <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
-                    all     {all}
-               </p>
-               <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
-                    average {average.toFixed(2)}
-               </p>
-               <p style={{ margin: '8px 0', fontWeight: 'bold' }}>
-                    positive {positivePercentage.toFixed(2)} %
-               </p>
+
+               <StatisticsLine text="good" value={good}/>
+               <StatisticsLine text="neutral" value={neutral}/>
+               <StatisticsLine text="bad" value={bad}/>
+               <StatisticsLine text="all" value={all}/>
+               <StatisticsLine text="average" value={average}/>
+               <StatisticsLine text="positivePercentage" value={positivePercentage}/>
           </>
 
      )
@@ -151,7 +159,7 @@ function App() {
                     
 
 
-                    <Statistics good={good} neutral={neutral} bad={bad} all={total} average={average}  positivePercentage={positivePercentage} />
+                    <Statistics good={good} neutral={neutral} bad={bad} all={total} average={average.toFixed(2)}  positivePercentage={positivePercentage.toFixed(2)} />
                </div>
           </div>
      )
