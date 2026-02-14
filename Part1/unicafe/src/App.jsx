@@ -15,7 +15,7 @@ return (
 
 const Statistics = (props) => {
      const { good, neutral, bad, average, positivePercentage, all } = props;
-     <h5>Statistics</h5>
+    
 if(all!==0){
      return (
           <><p style={{
@@ -26,7 +26,7 @@ if(all!==0){
           }}>
                
           </p>
-
+ <h5>Statistics</h5>
                <StatisticsLine text="good" value={good}/>
                <StatisticsLine text="neutral" value={neutral}/>
                <StatisticsLine text="bad" value={bad}/>
@@ -156,10 +156,7 @@ function App() {
                     minWidth: '250px',
                     fontFamily: 'monospace'
                }}>
-                    
-
-
-                    <Statistics good={good} neutral={neutral} bad={bad} all={total} average={average.toFixed(2)}  positivePercentage={positivePercentage.toFixed(2)} />
+             <Statistics good={good} neutral={neutral} bad={bad} all={total} average={average.toFixed(2)}  positivePercentage={positivePercentage.toFixed(2)} />
                </div>
           </div>
      )
