@@ -7,7 +7,7 @@ const {text, value} = props;
 
 return (
      <>
-      <p style={{ margin: '8px 0' }}>{text}  {value}</p>
+      <p style={{ margin: '8px 0' }}>{text}  {+value}</p>
      </>
 )
 
@@ -156,7 +156,7 @@ function App() {
                     minWidth: '250px',
                     fontFamily: 'monospace'
                }}>
-             <Statistics good={good} neutral={neutral} bad={bad} all={total} average={+average.toFixed(2)}  positivePercentage={+positivePercentage.toFixed(2)} />
+             <Statistics good={good} neutral={neutral} bad={bad} all={total} average={average.toFixed(2)}  positivePercentage={positivePercentage.toFixed(2)} />
                </div>
           </div>
      )
