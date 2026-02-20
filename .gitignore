@@ -1,0 +1,51 @@
+# Зависимости (Python, Node.js)
+node_modules/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Сборки и временные файлы
+build/
+dist/
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# IDE и редакторы (VS Code, Vim, etc.)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ОС и локальные файлы Linux
+*.rpm
+.deb
+/var/
+tmp/
+lost+found/
+
+# Скрипты и автоматизация (ваши проекты)
+*.env
+config.local
+secrets/
+*.key
+*.pem
+.id_rsa
+
+# Сетевые тесты и безопасность (Tor, pen-testing)
+*.pcap
+torrc
+hidden_service/
+arp-spoof-*
+
+# Git и репозитории
+.git/
+*.git
+
+# Тестирование и отладка
+coverage/
+.nyc_output/
