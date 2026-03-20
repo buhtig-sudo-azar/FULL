@@ -46,6 +46,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+#anecdotes{
+  background-color: #535bf2;
+}
 button:hover {
   border-color: #646cff;
 }

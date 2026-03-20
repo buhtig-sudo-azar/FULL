@@ -1,5 +1,18 @@
 import { useState } from 'react'
+import './index.css'
+// import AppArray  from './example_mod/Bag_goog_arr';
 
+
+
+
+const Button = (props) => {
+  const { click, name } = props;
+  return (
+    <button id="anecdotes" onClick={click}>{name}</button>
+  )
+
+
+}
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -11,17 +24,33 @@ const App = () => {
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.',
     'The only way to go fast, is to go well.'
   ]
-   
+
   const [selected, setSelected] = useState(0)
-const handler = () => {
-setSelected(Math.floor(Math.random() * anecdotes.length))
-}
+  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0))
 
-
+  const handler = () => {
+    setSelected(Math.floor(Math.random() * anecdotes.length))
+  }
+  const handlerVotes = () => {
+    const copyVotes = [...votes]
+    copyVotes[selected] += 1
+    setVotes(copyVotes)
+  }
+  const maxIndex = votes.indexOf(Math.max(...votes));
   return (
     <div>
-      <button style={{background:"red"}} onClick={handler}>anecdotes</button><br/>
-      {anecdotes[selected]}
+      <h2>Anecdode of the day</h2>
+
+      {anecdotes[selected]} <br /><br />
+      {votes[selected]} <br /><br />
+      <Button click={handler} name="next anecdote" />
+      <Button click={handlerVotes} name="votes" />
+
+      <h2>Anecdote with most votes</h2>
+
+      {votes[maxIndex] > 0 ? anecdotes[maxIndex] : "No votes yet"}
+
+
     </div>
   )
 }
