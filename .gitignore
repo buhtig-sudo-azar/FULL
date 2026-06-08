@@ -49,3 +49,7 @@ arp-spoof-*
 # Тестирование и отладка
 coverage/
 .nyc_output/
+-e 
+# AI platform artifacts
+Caddyfile
+worklog.md
